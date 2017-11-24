@@ -1,0 +1,71 @@
+
+<head>
+		@html.include('/partials/header')
+</head>
+<body class="profile-page">
+    @html.include('/partials/nav')
+    <div class="wrapper">
+		<div class="header header-filter" style="background-image: url('/img/pexels-photo-355312.jpeg');"></div>
+		<div class="main main-raised">
+			<div class="profile-content">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="profile">
+	                        <div class="name">
+	                            <h3 class="title">Sobre nós</h3>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="description text-center">
+                        <p><strong>QUEM SOMOS NÓS</strong><br>
+													Fundado em 10 de outubro de 2017, por um grupo de estudantes da FCV <a href="https://www.fcv.edu.br/" >( Faculdade Cidade Verde )</a>, localizado em Maringá - Paraná, a Agroweb é uma plataforma que veio para revolucionar o mercado
+													de agronegócios, com intuito de agilizar, intermediar, facilitar a compra e venda de insumos agrícolas. Trazendo as melhores ofertas do mercado para seus usuários, com total segurança e responsabilidade para satisfazer seus consumidores.</p>
+									<p><strong>Valores da empresa</strong><br>
+										Missão: Proporcionar a liberdade de Agrovenda entre as pessoas através da tecnologia.<br>
+										Visão: Ser reconhecida como empresa de buscas  em produtos de agrícolas.<br>
+										Valores: Simplicidade, praticidade, espírito inovador, comprometimento, confiança e otimismo.</p>
+										<p><strong>Informações para contato</strong></p>
+										<br>
+										<p><i class="material-icons">mail_outline</i>
+											<strong> Email:</strong>agroweb@gmail.com
+											<br>
+											<br>
+											<i class="material-icons">add_location</i>
+											<strong>Local:</strong>Maringá Zona 1</p>
+	                </div>
+									<br>
+									<br>
+
+
+	            </div>
+	        </div>
+		</div>
+<br>
+<br>
+<br>
+<br>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <nav class="pull-left">
+				<ul>
+					<li>
+
+					</li>
+					<li>
+
+					</li>
+					<li>
+
+					</li>
+					<li>
+
+					</li>
+				</ul>
+            </nav>
+        </div>
+    </footer>
+
+
+</body>
+	@html.include('/partials/script')

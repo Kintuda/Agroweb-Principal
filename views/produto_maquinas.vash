@@ -1,0 +1,73 @@
+<head>
+	@html.include('/partials/header')
+</head>
+
+<body class="profile-page">
+	@html.include('/partials/nav')
+	<div class="wrapper">
+		<div class="header header-filter" style="background-image: url('/img/pexels-photo-355312.jpeg');"></div>
+
+		<div class="main main-raised">
+			<div class="profile-content">
+				<div class="container">
+					<div class="row">
+						<div class="profile">
+							<div class="avatar">
+								<img src="/img/Trator-Desgovernado.png" alt="Circle Image" class="img-rounded img-responsive">
+							</div>
+							<div class="name">
+								<h3 class="title">@model.title</h3>
+							</div>
+						</div>
+					</div>
+					<div class="description text-center">
+						<p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<div class="content">
+
+								<br>
+								<br>
+
+								<div class="tab-content gallery">
+									<div class="tab-pane active" id="studio">
+										<div class='row'>
+											@html.include('/tables/tableproduto')
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<nav class="pull-left">
+				<ul>
+					<li>
+
+					</li>
+					<li>
+
+					</li>
+					<li>
+
+					</li>
+					<li>
+
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+
+</body>
+@html.include('/partials/script')
