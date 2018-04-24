@@ -11,13 +11,10 @@ client.latest({base: 'USD',symbols:'BRL'}, function handleLatest(err, data) {
     throw err;
   }
   else {
-    /*console.dir(data.rates);*/
     var teste = JSON.stringify(data.rates)
-    console.log(teste)
     dolar(teste)
   }
 });
 function dolar(teste){
-  document.querySelector('.results').innerHTML = 'teste';
-  console.log(teste)
+  document.querySelector('.results').innerHTML = 'teste'
 }

@@ -75,11 +75,11 @@ router.post('/login', function(req, res, next) {
   }
 });
 router.post('/cadastro', async function(req, res, next) {
-  var user = req.body
+  let user = req.body
 
-  var sql = `SELECT * FROM usuarios WHERE email = $1`
+  let sql = `SELECT * FROM usuarios WHERE email = $1`
 
-  var userInDb = await db.query(sql, [user.email])
+  let userInDb = await db.query(sql, [user.email])
 
   if (userInDb.rowCount > 0) {
     req.body.senha = ''
@@ -90,7 +90,7 @@ router.post('/cadastro', async function(req, res, next) {
     })
   }
 
-  var senha = criptografia.hashPwd(user.senha)
+  let senha = criptografia.hashPwd(user.senha)
   sql = `
   INSERT INTO usuarios(email, senha, ativo, data_cadastro, nome_completo,fone,cpf)
   VALUES ($1, $2, TRUE, CURRENT_DATE, $3,$4,$5);`
