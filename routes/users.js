@@ -13,7 +13,8 @@ router.use(function(req, res, next) {
   }
   next()
 })
-/* GET users listing. */
+
+
 router.get('/cadastro', function(req, res, next) {
   res.render('users/register', {
     user: {},
