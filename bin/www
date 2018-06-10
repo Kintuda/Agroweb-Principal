@@ -7,7 +7,7 @@
 var app = require('../app')
 var debug = require('debug')('novo-projeto:server')
 var http = require('http')
-require('dotenv').config()
+
 
 /**
  * Get port from environment and store in Express.
@@ -30,6 +30,7 @@ server.listen(port)
 server.on('error', onError)
 server.on('listening', onListening)
 
+require('dotenv').config()
 /**
  * Normalize a port into a number, string, or false.
  */

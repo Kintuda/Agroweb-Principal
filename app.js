@@ -7,7 +7,6 @@ var bodyParser = require('body-parser')
 var session = require('cookie-session')
 var compression = require('compression')
 var app = express();
-
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 
 // view engine setup
