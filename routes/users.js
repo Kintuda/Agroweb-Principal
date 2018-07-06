@@ -3,8 +3,8 @@ var router = express.Router()
 var db = require('../db/connect')
 var criptografia = require('../config/criptografia')
 var passport = require('passport')
-// antes de fazer qualquer coisa, verifica se está autenticado
-router.use(function(req, res, next) {
+
+router.use(function (req, res, next) {
   if (
     req.isAuthenticated() &&
     ['/users/login', '/users/cadastro'].indexOf(req.originalUrl) > -1
@@ -15,20 +15,20 @@ router.use(function(req, res, next) {
 })
 
 
-router.get('/cadastro', function(req, res, next) {
+router.get('/cadastro', function (req, res, next) {
   res.render('users/register', {
     user: {},
     nome: ''
   })
 })
 
-router.get('/login', function(req, res, next) {
+router.get('/login', function (req, res, next) {
   res.render('users/login', {
     nome: ''
   })
 })
 
-router.post('/login', function(req, res, next) {
+router.post('/login', function (req, res, next) {
   if (!(req.body.email && req.body.senha)) {
     res.render('users/login', {
       error: 'Todos os campos são obrigatórios!',
@@ -36,7 +36,7 @@ router.post('/login', function(req, res, next) {
     })
   }
   try {
-    passport.authenticate('local', function(err, user, info) {
+    passport.authenticate('local', function (err, user, info) {
       if (err) {
         res.render('users/login', {
           title: 'Acesso ao Sistema',
@@ -54,7 +54,7 @@ router.post('/login', function(req, res, next) {
       }
 
       // req / res held in closure
-      req.logIn(user, function(err) {
+      req.logIn(user, function (err) {
         if (err) {
           res.render('users/login', {
             title: 'Acesso ao Sistema',
@@ -74,7 +74,7 @@ router.post('/login', function(req, res, next) {
     })
   }
 });
-router.post('/cadastro', async function(req, res, next) {
+router.post('/cadastro', async function (req, res, next) {
   var user = req.body
 
   var sql = `SELECT * FROM usuarios WHERE email = $1`
@@ -96,7 +96,7 @@ router.post('/cadastro', async function(req, res, next) {
   VALUES ($1, $2, TRUE, CURRENT_DATE, $3,$4,$5);`
 
   try {
-    var result = await db.query(sql, [user.email, senha, user.nome_completo,user.fone,user.cpf])
+    var result = await db.query(sql, [user.email, senha, user.nome_completo, user.fone, user.cpf])
 
     if (result.rowCount === 0) {
       req.body.senha = ''
@@ -106,7 +106,7 @@ router.post('/cadastro', async function(req, res, next) {
         user: req.body
       })
     }
-    passport.authenticate('local', function(err, user, info) {
+    passport.authenticate('local', function (err, user, info) {
       if (err) {
         req.body.senha = ''
         return res.render('../views/users/register', {
@@ -126,7 +126,7 @@ router.post('/cadastro', async function(req, res, next) {
       }
 
       // req / res held in closure
-      req.logIn(user, function(err) {
+      req.logIn(user, function (err) {
         if (err) {
           req.body.senha = ''
           return res.render('../views/users/register', {
@@ -149,7 +149,7 @@ router.post('/cadastro', async function(req, res, next) {
   }
 })
 
-router.get('/logout', function(req, res, next) {
+router.get('/logout', function (req, res, next) {
   req.logout()
   res.redirect('/')
 })
